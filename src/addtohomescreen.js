@@ -1,5 +1,4 @@
 /* Add to Homescreen v3.2.3 ~ (c) 2015 Matteo Spinelli ~ @license: http://cubiq.org/license */
-(function (window, document) {
 /*
        _   _ _____     _____
  ___ _| |_| |_   _|___|  |  |___ _____ ___ ___ ___ ___ ___ ___ ___
@@ -59,8 +58,8 @@ ath.intl = {
 	},
 
 	en_us: {
-		ios: 'To add this web app to the home screen: tap %icon and then <strong>Add to Home Screen</strong>.',
-		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
+		ios: 'Steel Dragons works best when added to the home screen: Tap %icon and then <strong>Add to Home Screen</strong>.',
+		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon <span class="ath-action-icon">icon</span>.</small>',
 	},
 
 	es_es: {
@@ -488,7 +487,7 @@ ath.Class.prototype = {
 		// try to get the highest resolution application icon
 		if ( !this.applicationIcon ) {
 			if ( ath.OS == 'ios' ) {
-				this.applicationIcon = document.querySelector('head link[rel^=apple-touch-icon][sizes="152x152"],head link[rel^=apple-touch-icon][sizes="144x144"],head link[rel^=apple-touch-icon][sizes="120x120"],head link[rel^=apple-touch-icon][sizes="114x114"],head link[rel^=apple-touch-icon]');
+				this.applicationIcon = document.querySelector('head link[rel^=apple-touch-icon][sizes="180x180"],head link[rel^=apple-touch-icon][sizes="152x152"],head link[rel^=apple-touch-icon][sizes="144x144"],head link[rel^=apple-touch-icon][sizes="120x120"],head link[rel^=apple-touch-icon][sizes="114x114"],head link[rel^=apple-touch-icon]');
 			} else {
 				this.applicationIcon = document.querySelector('head link[rel^="shortcut icon"][sizes="196x196"],head link[rel^=apple-touch-icon]');
 			}
@@ -747,4 +746,4 @@ function _removeToken () {
 // expose to the world
 window.addToHomescreen = ath;
 
-})(window, document);
+module.exports =ath;
